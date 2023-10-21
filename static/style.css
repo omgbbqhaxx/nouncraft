@@ -116,25 +116,22 @@ ul li{
 
 
 .section_1 {
-	background-image: url(bone.png);
+	background-image: url(one.png);
 	position: relative;
 }
 
 
 .section_2 {
-	background-image: url(btwo.png);
+	background-image: url(test.avif);
 	position: relative;
 }
 
 .section_3 {
-	background-image: url(bthree.png);
+	background-image: url(three.png);
 	position: relative;
 }
 
-.section_4 {
-	background-image: url(bfour.png);
-	position: relative;
-}
+ 
 
 
  
@@ -149,6 +146,7 @@ ul li{
 	font-weight:600;
 	font-size: 40px;
 	 color: #181b21;
+     padding-top: 80px;
 }
 
 .sub_heding {
