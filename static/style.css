@@ -116,41 +116,28 @@ ul li{
 
 
 .section_1 {
-	background-image: url(https://thatanjan.github.io/tesla-clone-yt/media/3.avif);
+	background-image: url(bone.png);
 	position: relative;
 }
 
 
 .section_2 {
-	background-image: url(https://thatanjan.github.io/tesla-clone-yt/media/1.avif);
+	background-image: url(btwo.png);
 	position: relative;
 }
 
 .section_3 {
-	background-image: url(https://thatanjan.github.io/tesla-clone-yt/media/2.avif);
+	background-image: url(bthree.png);
 	position: relative;
 }
 
 .section_4 {
-	background-image: url(https://thatanjan.github.io/tesla-clone-yt/media/4.avif);
+	background-image: url(bfour.png);
 	position: relative;
 }
 
 
-.section_5 {
-	background-image: url(https://thatanjan.github.io/tesla-clone-yt/media/5.avif);
-	position: relative;
-}
-
-.section_6 {
-	background-image: url(https://thatanjan.github.io/tesla-clone-yt/media/6.avif);
-	position: relative;
-}
-
-.section_7 {
-	background-image: url(https://thatanjan.github.io/tesla-clone-yt/media/7.avif);
-	position: relative;
-}
+ 
 
 .text_box{
 	width: 100%;
