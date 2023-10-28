@@ -106,21 +106,20 @@ async function fetchAccountData() {
   // Go through all accounts and get their ETH balance
   const rowResolvers = accounts.map(async (address) => {
     const balance = await web3.eth.getBalance(address);
-    const ebl =  await Tether.methods.balanceOf(address).call();
-    console.log("eblllll", ebl);
+     
     // ethBalance is a BigNumber instance
     // https://github.com/indutny/bn.js/
     const ethBalance = web3.utils.fromWei(balance, "ether");
-    const eerBalance = web3.utils.fromWei(ebl, "ether");
+    
 
 
     const humanFriendlyBalance = parseFloat(ethBalance).toFixed(4);
-    const humanFriendlyeerBalance = parseFloat(eerBalance).toFixed(4);
+ 
     // Fill in the templated row and put in the document
     const clone = template.content.cloneNode(true);
     clone.querySelector(".address").textContent = address;
     clone.querySelector(".balance").textContent = humanFriendlyBalance;
-    clone.querySelector(".eerbalance").textContent = humanFriendlyeerBalance;
+
     accountContainer.appendChild(clone);
   });
 
