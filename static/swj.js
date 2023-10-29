@@ -167,7 +167,7 @@ async function generateMemo() {
     //var number = new BN(greatwei);
     console.log("selectedAccount", selectedAccount);
     document.querySelector("#playwithmmask").textContent  = "Please wait 1 blockchain conf..";
-    var greatwei = web3.utils.toWei('0.001', 'ether');
+    var greatwei = web3.utils.toWei('0.09', 'ether');
 
     console.log("greatwei", greatwei);
     const grpice  = web3.eth.getGasPrice().then(function(networkgasprice){
