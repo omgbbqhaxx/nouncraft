@@ -72,8 +72,10 @@ async function fetchAccountData() {
   // Load chain information over an HTTP API
     const chainData = evmChains.getChain(chainId);
     console.log("first of all i need to get chainData.name", chainData.name);
-  document.querySelector("#network-name").textContent = chainData.name;
 
+    if(chainData.name=="scroll") {
+
+  document.querySelector("#network-name").textContent = chainData.name;
   // Get list of accounts of the connected wallet
   const accounts = await web3.eth.getAccounts();
 
@@ -130,7 +132,54 @@ async function fetchAccountData() {
   await Promise.all(rowResolvers);
   document.querySelector("#prepare").style.display = "none";
   document.querySelector("#connected").style.display = "block";
+} else {
+      // Call the function when needed
+  switchOrAddNetwork();
 }
+
+}
+
+async function switchOrAddNetwork() {
+    const networkParams = {
+      chainId: '0x82750', // Replace with the hexadecimal chain ID of your network
+      rpcUrls: ['https://rpc.scroll.io'],
+      chainName: 'Scroll',
+      nativeCurrency: {
+        name: 'Ethereum',
+        symbol: 'ETH',
+        decimals: 18,
+      },
+      blockExplorerUrls: ['https://blockscout.scroll.io/'],
+    };
+  
+    try {
+      // Try to switch to the network
+      await ethereum.request({
+        method: 'wallet_switchEthereumChain',
+        params: [{ chainId: '0x82750' }],
+      });
+    } catch (error) {
+      // This error code indicates that the chain has not been added to MetaMask
+      if (error.code === 4902) {
+        try {
+          // Try to add the network
+          await ethereum.request({
+            method: 'wallet_addEthereumChain',
+            params: [networkParams],
+          });
+        } catch (addError) {
+          // Handle any errors that occur when trying to add the network
+          console.error('Error adding network:', addError);
+        }
+      } else {
+        // Handle other errors
+        console.error('Error switching network:', error);
+      }
+    }
+  }
+  
+
+  
 
 
  
