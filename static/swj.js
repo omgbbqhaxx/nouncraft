@@ -73,7 +73,7 @@ async function fetchAccountData() {
     const chainData = evmChains.getChain(chainId);
     console.log("first of all i need to get chainData.name", chainData.name);
 
-    if(chainData.name=="scroll") {
+    if(chainData.name=="Scroll") {
 
   document.querySelector("#network-name").textContent = chainData.name;
   // Get list of accounts of the connected wallet
