@@ -4,6 +4,9 @@
 
     {name:"Base",chainId:8453, shortName:"base",chain:"ETH",network:"mainnet",networkId:8453,nativeCurrency:{name:"Ether",symbol:"ETH",decimals:18},rpc:["https://mainnet.base.org"],faucets:[],infoURL:"https://base.org"},
     
+    {name:"Scroll",chainId:534352, shortName:"Scroll",chain:"ETH",network:"mainnet",networkId:534352,nativeCurrency:{name:"Ether",symbol:"ETH",decimals:18},rpc:["https://rpc.scroll.io"],faucets:[],infoURL:"https://blockscout.scroll.io"},
+    
+    
     
     
     
