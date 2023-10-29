@@ -108,8 +108,14 @@ async function fetchAccountData() {
     const rowResolvers = accounts.map(async (address) => {
     const balance = await web3.eth.getBalance(address);
 
-    const getstatus =  await Tether.methods.checkDownload(address, 1);
-    console.log("get status", getstatus);
+    const getstatus =  await Tether.methods.checkDownload(address, 1).then(function(result){
+      //the result holds your Token Balance that you can assign to a var
+       console.log("resulttt", result);
+
+    });
+
+
+ 
      
     // ethBalance is a BigNumber instance
     // https://github.com/indutny/bn.js/
