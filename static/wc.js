@@ -110,22 +110,23 @@ async function fetchAccountData() {
 
     const getstatus =  await Tether.methods.checkDownload(address, 1).call().then(function(result){
       //the result holds your Token Balance that you can assign to a var
-       console.log("resulttt", result);
+        console.log("resulttt", result);
+      if(result) {
+        //if result is true user can download content
+        document.querySelector("#playwithmmask").style.display = "none";
+        document.querySelector("#startdownload").style.display = "block";
+        console.log("if purchasement is true", result);
+
+      } else {
+        // else show buy button only!.
+
+      }
+       
 
     });
 
-
- 
-     
-    // ethBalance is a BigNumber instance
-    // https://github.com/indutny/bn.js/
     const ethBalance = web3.utils.fromWei(balance, "ether");
-    
-
-
     const humanFriendlyBalance = parseFloat(ethBalance).toFixed(4);
- 
-    // Fill in the templated row and put in the document
     const clone = template.content.cloneNode(true);
     clone.querySelector(".address").textContent = address;
     clone.querySelector(".balance").textContent = humanFriendlyBalance;
@@ -133,36 +134,16 @@ async function fetchAccountData() {
     accountContainer.appendChild(clone);
   });
 
-  // Because rendering account does its own RPC commucation
-  // with Ethereum node, we do not want to display any results
-  // until data for all accounts is loaded
   await Promise.all(rowResolvers);
-
-  // Display fully loaded UI for wallet data
   document.querySelector("#prepare").style.display = "none";
   document.querySelector("#connected").style.display = "block";
 }
 
 
-
-/**
- * Fetch account data for UI when
- * - User switches accounts in wallet
- * - User switches networks in wallet
- * - User connects wallet initially
- */
+ 
 async function refreshAccountData() {
-
-  // If any current data is displayed when
-  // the user is switching acounts in the wallet
-  // immediate hide this data
   document.querySelector("#connected").style.display = "none";
   document.querySelector("#prepare").style.display = "block";
-
-  // Disable button while UI is loading.
-  // fetchAccountData() will take a while as it communicates
-  // with Ethereum node via JSON-RPC and loads chain data
-  // over an API call.
   document.querySelector("#btn-connect").setAttribute("disabled", "disabled")
   await fetchAccountData(provider);
   document.querySelector("#btn-connect").removeAttribute("disabled")
@@ -239,6 +220,10 @@ async function generateMemo() {
 
                       console.log("data amount is here two", web3.utils.fromWei(receipt.logs[0].data, 'ether') );
 
+                      //checkiechan
+                      document.querySelector("#playwithmmask").style.display = "none";
+                      document.querySelector("#startdownload").style.display = "block";
+
                       web3.eth.getTransaction(hash, function(err, result) {
                         if (result) {
                            console.log("result is here",result);
@@ -290,7 +275,6 @@ async function signordie(rawTx) {
 }
 
 async function onConnect() {
-
   console.log("Opening a dialog", web3Modal);
   try {
     provider = await web3Modal.connect();
@@ -317,21 +301,10 @@ async function onConnect() {
   await refreshAccountData();
 }
 
-/**
- * Disconnect wallet button pressed.
- */
 async function onDisconnect() {
-
   console.log("Killing the wallet connection", provider);
-
-  // TODO: Which providers have close method?
   if(provider.close) {
     await provider.close();
-
-    // If the cached provider is not cleared,
-    // WalletConnect will default to the existing session
-    // and does not allow to re-scan the QR code with a new wallet.
-    // Depending on your use case you may want or want not his behavir.
     await web3Modal.clearCachedProvider();
     provider = null;
   }
