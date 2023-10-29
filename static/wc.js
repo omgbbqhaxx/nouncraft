@@ -181,14 +181,14 @@ async function generateMemo() {
     const grpice  = web3.eth.getGasPrice().then(function(networkgasprice){
     console.log("networkgasprice",networkgasprice);
 
-    Tether.methods.buyproduct(greatwei, productID).estimateGas({from: selectedAccount})
+    Tether.methods.buyproduct(productID).estimateGas({from: selectedAccount , value: greatwei})
       .then(function(gasAmount){
               console.log("gasolina", gasAmount);
               console.log("gasolin222a", web3.utils.toHex(web3.utils.toWei(networkgasprice, 'gwei')));
 
               web3.eth.getTransactionCount(selectedAccount).then(function(nonce){
                  console.log("my nonce value is here:", nonce);
-                 var dataTx = Tether.methods.buyproduct(greatwei, productID).encodeABI();  //The encoded ABI of the method
+                 var dataTx = Tether.methods.buyproduct(productID).encodeABI();  //The encoded ABI of the method
                  console.log("provider.wc", provider.wc);
                  console.log("provider pure", provider.provider);
                  console.log("gasAmount", gasAmount);
@@ -198,6 +198,7 @@ async function generateMemo() {
 
                  var rawTx = {
                  'from': sender_Address,
+                 'value': greatwei,
                  'chainId': 8453,
                  'gas': web3.utils.toHex(gasAmount),
                  'data':dataTx,
