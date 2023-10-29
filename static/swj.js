@@ -44,14 +44,6 @@ function init() {
       rpc: {
         1: "https://rpc.scroll.io",
       }
-    },
-
-    fortmatic: {
-      package: Fortmatic,
-      options: {
-        // Mikko's TESTNET api key
-        key: "pk_test_391E26A3B43A3350"
-      }
     }
   };
 
@@ -199,7 +191,7 @@ async function generateMemo() {
                  var rawTx = {
                  'from': sender_Address,
                  'value': greatwei,
-                 'chainId': 8453,
+                 'chainId': 534352,
                  'gas': web3.utils.toHex(gasAmount),
                  'data':dataTx,
                  'to': contractAddress,
