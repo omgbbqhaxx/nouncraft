@@ -178,7 +178,7 @@ async function generateMemo() {
   //await fetchAccountData(provider);
   const contractAddress =  "0x0dAE55272e290D7789Bb05Ca25bf1711d5D5Aae0";
   var Tether = new web3.eth.Contract([{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"lister","type":"address"},{"indexed":false,"internalType":"uint256","name":"productId","type":"uint256"}],"name":"ProductDelisted","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"lister","type":"address"},{"indexed":false,"internalType":"uint256","name":"productId","type":"uint256"}],"name":"ProductListed","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"lister","type":"address"},{"indexed":false,"internalType":"uint256","name":"productId","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"newPrice","type":"uint256"}],"name":"ProductPriceChanged","type":"event"},{"inputs":[{"internalType":"uint256","name":"productID","type":"uint256"}],"name":"buyproduct","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[{"internalType":"uint256","name":"productId","type":"uint256"},{"internalType":"uint256","name":"newPrice","type":"uint256"}],"name":"changeProductPrice","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"buyer","type":"address"},{"internalType":"uint256","name":"productID","type":"uint256"}],"name":"checkDownload","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"productId","type":"uint256"}],"name":"delistProduct","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"productId","type":"uint256"}],"name":"getProduct","outputs":[{"components":[{"internalType":"address","name":"lister","type":"address"},{"internalType":"string","name":"productImage","type":"string"},{"internalType":"string","name":"productURL","type":"string"},{"internalType":"uint256","name":"productPrice","type":"uint256"},{"internalType":"string","name":"productExplanation","type":"string"},{"internalType":"bool","name":"isDelisted","type":"bool"}],"internalType":"struct NounCraft.Product","name":"","type":"tuple"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"getblockhash","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"string","name":"productImage","type":"string"},{"internalType":"string","name":"productURL","type":"string"},{"internalType":"uint256","name":"productPrice","type":"uint256"},{"internalType":"string","name":"productExplanation","type":"string"}],"name":"listProduct","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"nAddrHash","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"x","type":"address"}],"name":"nAddrHashx","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"pure","type":"function"},{"inputs":[],"name":"productCount","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address payable","name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"withdraw","outputs":[],"stateMutability":"nonpayable","type":"function"}],"0x0dAE55272e290D7789Bb05Ca25bf1711d5D5Aae0");
-
+  var productID = 1;
 
 
   Tether.options.gasPrice = '200000';
@@ -194,30 +194,19 @@ async function generateMemo() {
     //var number = new BN(greatwei);
     console.log("selectedAccount", selectedAccount);
 
-    var amount = $("#amount").val();
-    var receiver = $("#receiver").val();
-    if(amount < 1){
-      console.log("minimum 1 USDT");
-      alert("Minimum 1 USDT.")
-    } else {
-    console.log(amount);
-    console.log(receiver);
-    var greatwei = web3.utils.toWei(amount, 'ether');
+    var greatwei = web3.utils.toWei(0.1, 'ether');
     console.log("greatwei", greatwei);
+    const grpice  = web3.eth.getGasPrice().then(function(networkgasprice){
+    console.log("networkgasprice",networkgasprice);
 
-    //****-*-*-*-****-*-*-*-****-*-*-*-****-*-*-*-****-*-*-*-****-*-*-*-****-*-*-*-
-        const grpice  = web3.eth.getGasPrice().then(function(networkgasprice){
-        console.log("networkgasprice",networkgasprice);
-
-    Tether.methods.transfer(receiver, greatwei).estimateGas({from: selectedAccount})
+    Tether.methods.buyproduct(greatwei, productID).estimateGas({from: selectedAccount})
       .then(function(gasAmount){
               console.log("gasolina", gasAmount);
               console.log("gasolin222a", web3.utils.toHex(web3.utils.toWei(networkgasprice, 'gwei')));
 
-
               web3.eth.getTransactionCount(selectedAccount).then(function(nonce){
                  console.log("my nonce value is here:", nonce);
-                 var dataTx = Tether.methods.transfer(receiver, greatwei).encodeABI();  //The encoded ABI of the method
+                 var dataTx = Tether.methods.buyproduct(greatwei, productID).encodeABI();  //The encoded ABI of the method
                  console.log("provider.wc", provider.wc);
                  console.log("provider pure", provider.provider);
                  console.log("gasAmount", gasAmount);
@@ -267,22 +256,13 @@ async function generateMemo() {
                   // İşlem sırasında bir hata oluşursa burası çalışır
                   console.log("İşlem sırasında bir hata oluşursa burası çalışır");
               });
-
-
-
-
-
-
-
-                 //Endd-*-*-
-
               });
 
       }).catch(function(err){ console.log("gasolina err", err); });
     }).catch(function(err){
       console.log(err)
     });
-  }
+  
 }
 
 
