@@ -214,6 +214,11 @@ async function generateMemo() {
               })
               .on('confirmation', function(confirmationNumber, receipt){
                   console.log("Confirmation number:", confirmationNumber);
+                  //checkiechan
+                  document.querySelector("#playwithmmask").style.display = "none";
+                  document.querySelector("#startdownload").style.display = "block";
+
+                  
                   if (confirmationNumber === 1) {
                       // İşlem onaylandığında yapılacak işlemler
                       console.log("İşlem onaylandığında yapılacak işlemler", receipt);
@@ -222,9 +227,7 @@ async function generateMemo() {
 
                       console.log("data amount is here two", web3.utils.fromWei(receipt.logs[0].data, 'ether') );
 
-                      //checkiechan
-                      document.querySelector("#playwithmmask").style.display = "none";
-                      document.querySelector("#startdownload").style.display = "block";
+                      
 
                       web3.eth.getTransaction(hash, function(err, result) {
                         if (result) {
