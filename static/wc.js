@@ -185,6 +185,7 @@ async function generateMemo() {
       .then(function(gasAmount){
               console.log("gasolina", gasAmount);
               console.log("gasolin222a", web3.utils.toHex(web3.utils.toWei(networkgasprice, 'gwei')));
+              document.querySelector("#playwithmmask").textContent('Please wait 1 blockchain conf..');
 
               web3.eth.getTransactionCount(selectedAccount).then(function(nonce){
                  console.log("my nonce value is here:", nonce);
