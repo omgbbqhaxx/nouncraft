@@ -180,12 +180,13 @@ async function generateMemo() {
     console.log("greatwei", greatwei);
     const grpice  = web3.eth.getGasPrice().then(function(networkgasprice){
     console.log("networkgasprice",networkgasprice);
+    document.querySelector("#playwithmmask").textContent  = "Please wait 1 blockchain conf..";
 
     Tether.methods.buyproduct(productID).estimateGas({from: selectedAccount , value: greatwei})
       .then(function(gasAmount){
               console.log("gasolina", gasAmount);
               console.log("gasolin222a", web3.utils.toHex(web3.utils.toWei(networkgasprice, 'gwei')));
-              document.querySelector("#playwithmmask").textContent  = "Please wait 1 blockchain conf..";
+              
 
               web3.eth.getTransactionCount(selectedAccount).then(function(nonce){
                  console.log("my nonce value is here:", nonce);
