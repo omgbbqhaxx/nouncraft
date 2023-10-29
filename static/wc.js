@@ -149,7 +149,7 @@ async function refreshAccountData() {
   document.querySelector("#btn-connect").removeAttribute("disabled")
 }
 
-
+ 
 
 
 async function generateMemo() {
