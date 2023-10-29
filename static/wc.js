@@ -175,7 +175,8 @@ async function generateMemo() {
     //var number = new BN(greatwei);
     console.log("selectedAccount", selectedAccount);
 
-    var greatwei = web3.utils.toWei(0.1, 'ether');
+    var greatwei = web3.utils.toWei('0.1', 'ether');
+
     console.log("greatwei", greatwei);
     const grpice  = web3.eth.getGasPrice().then(function(networkgasprice){
     console.log("networkgasprice",networkgasprice);
