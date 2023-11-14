@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link rel="apple-touch-icon" sizes="57x57" href="static/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="static/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="static/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="static/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="static/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="static/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="static/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="static/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="static/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="static/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
+  <link rel="manifest" href="static/favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="static/favicon/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+
+
+
+
+  <script  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script  src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/ethereum-blockies@0.1.1/blockies.min.js"></script>
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/bulma@0.9.3/dist/js/bulma.min.js"></script>
+  <!-- Import the component -->
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
+
+  <!-- JS codes start-->
+
+
+  <!-- WalletConnect Codes -->
+
+    <script type="text/javascript" src="https://unpkg.com/web3@1.2.11/dist/web3.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/web3modal@1.9.0/dist/index.js"></script>
+    <script type="text/javascript" src="static/evmchains.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/@walletconnect/web3-provider@1.2.1/dist/umd/index.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/fortmatic@2.0.6/dist/fortmatic.js"></script>
+
+    <script type="text/javascript" src="/static/wc.js"></script>
+
+  <!--JS codes end-->
+  <title>Buy sell 3D objects ready to print with crypto currency.</title>
+  <link href='https://fonts.googleapis.com/css?family=Nunito Sans' rel='stylesheet'>
+  <style>
+  html {
+    background:#1a1b20;
+  }
+  .table {
+    background-color:#2b1e23;
+    border-radius: 10px;
+
+    -moz-box-shadow:    inset 0 0 6px #1a1b20;
+    -webkit-box-shadow: inset 0 0 6px #1a1b20;
+    box-shadow:
+  }
+  .table td  {
+    color:white;
+    font-family: 'Nunito Sans';font-size: 18px;
+  }
+
+  .table thead th  {
+    color:white;
+    font-family: 'Nunito Sans';font-size: 18px;
+  }
+
+
+
+  .title  {
+    color:white;
+    font-family: 'Nunito Sans';font-size: 18px;
+  }
+
+  .titletwo  {
+    color:white;
+    font-family: 'Nunito Sans';font-size: 23px;
+  }
+
+  .titlethree  {
+    color:white;
+    font-family: 'Nunito Sans';font-size: 13px;
+  }
+  .titlethree a{
+    color:#1FC7D4;
+    font-family: 'Nunito Sans';font-size: 13px;
+  }
+
+  
+  .subtitle {
+    color:white;
+    font-family: 'Nunito Sans';font-size: 18px;
+  }
+  </style>
+</head>
+<body>
+
+
+  <nav class="navbar" role="navigation" aria-label="main navigation" style="background-color: #121212;">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="#">
+        <img src="static/logopurple.png" alt="Logo">
+      </a>
+  
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+      
+    </div>
+  
+    <div id="navbarBasicExample" class="navbar-menu">
+      
+  
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+           
+            <a class="button is-light" href="#">
+              Connect
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  
+
+
+ <section class="section">
+	
+	<div class="columns">
+		<div class="column"></div>
+		<div class="column">
+			<center> 
+        <!-- Use it like any other HTML element -->
+<model-viewer  src="static/3dcollection.glb"  shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+      
+      
+      </center>
+		</div>
+		<div class="column"></div>
+	  </div>
+
+	  <div class="columns">
+		<div class="column"></div>
+		<div class="column">
+			<center> <p class="titletwo">Buy and download noun stick.</p>  </center>
+		</div>
+		<div class="column"></div>
+	  </div>
+
+
+      
+    
+
+
+
+    <br>
+ 
+  <!-- FİLL ERE-->
+  <!-- Construct a Bootstrap layout -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+
+
+        <div id="prepare">
+         <center>
+			<button class="btn-action js-scroll-trigger button is-warning is-light" id="btn-connect">
+            Connect and buy
+          </button>
+		</center> 
+        </div>
+
+        <div id="connected" style="display: none">
+
+          <button class="btn-action js-scroll-trigger button is-danger is-light" id="btn-disconnect">
+            Disconnect wallet
+          </button>
+
+          <br><br>
+
+          
+
+          <button onclick="generateMemo()" class="button is-light" id="playwithmmask">Buy</button>
+            <button role="link" onclick="window.location.href='https://drive.google.com/file/d/12ENywXLU-bMpwI2WIZ7Ii2MrjUX15DPv/view?usp=drive_link'"    style="display: none" class="button is-light" id="startdownload">Download</button>
+
+          <hr>
+
+          <div id="network">
+            <p>
+              <strong>Connected blockchain:</strong> <span id="network-name"></span>
+            </p>
+
+            <p>
+              <strong>Selected account:</strong> <span id="selected-account"></span>
+            </p>
+
+          </div>
+
+          <hr>
+
+          <h3>All account balances</h3>
+
+          <table class="table table-listing">
+            <thead>
+              <th>Address</th>
+              <th>ETH balance</th>
+            </thead>
+
+            <tbody id="accounts">
+            </tbody>
+          </table>
+
+          <p>Please try to switch between different accounts in your wallet if your wallet supports this functonality.</p>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div id="templates" style="display: none">
+    <template id="template-balance">
+      <tr>
+        <th class="address"></th>
+        <td class="balance"></td>
+      </tr>
+    </template>
+  </div>
+
+    <!-- FİLL ERE-->
+
+
+ </section>
+ </div>
+
+
+
+
+
+ </body>
+</html>
