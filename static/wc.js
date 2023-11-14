@@ -116,6 +116,7 @@ async function fetchAccountData() {
         //if result is true user can download content
         document.querySelector("#playwithmmask").style.display = "none";
         document.querySelector("#startdownload").style.display = "block";
+        document.querySelector("#btn-disconnect").style.display = "block";
         console.log("if purchasement is true", result);
 
       } else {
@@ -125,6 +126,27 @@ async function fetchAccountData() {
        
 
     });
+
+    var icon = blockies.create({ // All options are optional
+      seed: address, // seed used to generate icon data, default: random
+      //color: '#dfe', // to manually specify the icon color, default: random
+      //bgcolor: '#aaa', // choose a different background color, default: random
+      size: 15, // width/height of the icon in blocks, default: 8
+      scale: 3, // width/height of each block in pixels, default: 4
+      //spotcolor: '#000' // each pixel has a 13% chance of being of a third color,
+      // default: random. Set to -1 to disable it. These "spots" create structures
+      // that look like eyes, mouths and noses.
+    });
+    console.log(icon);
+     $('.blockimage').attr('src', icon.toDataURL());
+     //$(".blockimage").append(icon);
+     // -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*// -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+  
+  
+    });
+
+
+
 
     const ethBalance = web3.utils.fromWei(balance, "ether");
     const humanFriendlyBalance = parseFloat(ethBalance).toFixed(4);
@@ -146,6 +168,7 @@ async function fetchAccountData() {
 async function refreshAccountData() {
   document.querySelector("#connected").style.display = "none";
   document.querySelector("#prepare").style.display = "block";
+  document.querySelector("#btn-disconnect").style.display = "block";
   document.querySelector("#btn-connect").setAttribute("disabled", "disabled")
   await fetchAccountData(provider);
   document.querySelector("#btn-connect").removeAttribute("disabled")
