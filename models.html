@@ -50,7 +50,7 @@
     <script type="text/javascript" src="https://unpkg.com/@walletconnect/web3-provider@1.2.1/dist/umd/index.min.js"></script>
     <script type="text/javascript" src="https://unpkg.com/fortmatic@2.0.6/dist/fortmatic.js"></script>
 
-    <script type="text/javascript" src="/static/wc.js"></script>
+    <script type="text/javascript" src="static/wc.js"></script>
     <link rel="stylesheet" href="static/stylex.css">
   
 
@@ -67,7 +67,15 @@
     <div class="container">
         <a class="navbar-brand" href="#"><img src="static/logopurple.png" style="width: 128px;"> </a>
 
-        <div id="prepare"> <button class="btn btn-primary ms-auto" id="btn-connect"> Connect and buy </button> </div>
+        <div id="prepare">
+          <button class="btn btn-primary ms-auto" id="btn-connect"> Connect and buy </button>
+        </div>
+
+        <button class="btn btn-danger js-scroll-trigger" id="btn-disconnect">
+          Disconnect 
+        </button>
+
+
         <!-- Add your other navigation links or components here -->
     </div>
 </nav>
@@ -89,9 +97,7 @@
 
         <div id="connected" style="display: none">
 
-          <button class="btn-action js-scroll-trigger button is-danger is-light" id="btn-disconnect">
-            Disconnect wallet
-          </button>
+      
 
     
 
