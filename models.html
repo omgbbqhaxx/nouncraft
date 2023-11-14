@@ -22,9 +22,11 @@
   <link rel="manifest" href="static/favicon/manifest.json">
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="static/favicon/ms-icon-144x144.png">
-  <meta name="theme-color" content="#ffffff">
 
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+ 
 
 
 
@@ -33,11 +35,9 @@
   <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/ethereum-blockies@0.1.1/blockies.min.js"></script>
 
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-  <script defer src="https://cdn.jsdelivr.net/npm/bulma@0.9.3/dist/js/bulma.min.js"></script>
   <!-- Import the component -->
   <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
+  
 
   <!-- JS codes start-->
 
@@ -51,141 +51,41 @@
     <script type="text/javascript" src="https://unpkg.com/fortmatic@2.0.6/dist/fortmatic.js"></script>
 
     <script type="text/javascript" src="/static/wc.js"></script>
+    <link rel="stylesheet" href="static/stylex.css">
+  
+
 
   <!--JS codes end-->
   <title>Buy sell 3D objects ready to print with crypto currency.</title>
   <link href='https://fonts.googleapis.com/css?family=Nunito Sans' rel='stylesheet'>
-  <style>
-  html {
-    background:#1a1b20;
-  }
-  .table {
-    background-color:#2b1e23;
-    border-radius: 10px;
-
-    -moz-box-shadow:    inset 0 0 6px #1a1b20;
-    -webkit-box-shadow: inset 0 0 6px #1a1b20;
-    box-shadow:
-  }
-  .table td  {
-    color:white;
-    font-family: 'Nunito Sans';font-size: 18px;
-  }
-
-  .table thead th  {
-    color:white;
-    font-family: 'Nunito Sans';font-size: 18px;
-  }
-
-
-
-  .title  {
-    color:white;
-    font-family: 'Nunito Sans';font-size: 18px;
-  }
-
-  .titletwo  {
-    color:white;
-    font-family: 'Nunito Sans';font-size: 23px;
-  }
-
-  .titlethree  {
-    color:white;
-    font-family: 'Nunito Sans';font-size: 13px;
-  }
-  .titlethree a{
-    color:#1FC7D4;
-    font-family: 'Nunito Sans';font-size: 13px;
-  }
-
-  
-  .subtitle {
-    color:white;
-    font-family: 'Nunito Sans';font-size: 18px;
-  }
-  </style>
 </head>
 <body>
 
 
-  <nav class="navbar" role="navigation" aria-label="main navigation" style="background-color: #121212;">
-    <div class="navbar-brand">
-      <a class="navbar-item" href="#">
-        <img src="static/logopurple.png" alt="Logo">
-      </a>
-  
-      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
-      
+   <!-- Bootstrap Navbar -->
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#"><img src="static/logopurple.png" style="width: 128px;"> </a>
+
+        <div id="prepare"> <button class="btn btn-primary ms-auto" id="btn-connect"> Connect and buy </button> </div>
+        <!-- Add your other navigation links or components here -->
     </div>
-  
-    <div id="navbarBasicExample" class="navbar-menu">
-      
-  
-      <div class="navbar-end">
-        <div class="navbar-item">
-          <div class="buttons">
-           
-            <a class="button is-light" href="#">
-              Connect
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </nav>
-
-  
+</nav>
 
 
- <section class="section">
-	
-	<div class="columns">
-		<div class="column"></div>
-		<div class="column">
-			<center> 
+        <div class="container mt-4"> 
         <!-- Use it like any other HTML element -->
-<model-viewer  src="static/3dcollection.glb"  shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
-      
-      
-      </center>
-		</div>
-		<div class="column"></div>
-	  </div>
+        <model-viewer  src="static/3dcollection.glb"  shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer> 
 
-	  <div class="columns">
-		<div class="column"></div>
-		<div class="column">
-			<center> <p class="titletwo">Buy and download noun stick.</p>  </center>
-		</div>
-		<div class="column"></div>
-	  </div>
-
-
-      
+        <p class="titletwo">Buy and download noun stick.</p> 
+	 
+  
     
+        
 
 
+      </div>
 
-    <br>
- 
-  <!-- FİLL ERE-->
-  <!-- Construct a Bootstrap layout -->
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-
-
-        <div id="prepare">
-         <center>
-			<button class="btn-action js-scroll-trigger button is-warning is-light" id="btn-connect">
-            Connect and buy
-          </button>
-		</center> 
-        </div>
 
         <div id="connected" style="display: none">
 
@@ -193,7 +93,7 @@
             Disconnect wallet
           </button>
 
-          <br><br>
+    
 
           
 
@@ -231,25 +131,22 @@
 
         </div>
 
+   
+  
+ 
+
+
+      <div id="templates" style="display: none">
+        <template id="template-balance">
+          <tr>
+            <th class="address"></th>
+            <td class="balance"></td>
+          </tr>
+        </template>
       </div>
-    </div>
-  </div>
-
-
-  <div id="templates" style="display: none">
-    <template id="template-balance">
-      <tr>
-        <th class="address"></th>
-        <td class="balance"></td>
-      </tr>
-    </template>
-  </div>
-
-    <!-- FİLL ERE-->
-
-
- </section>
- </div>
+    
+ 
+ 
 
 
 

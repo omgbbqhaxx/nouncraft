@@ -1,0 +1,42 @@
+html {
+    background:#1a1b20;
+  }
+  body {
+    background:#1a1b20;
+  }
+  .table {
+    background-color:#2b1e23;
+    border-radius: 10px;
+  }
+  .table td  {
+    color: #1a1b20;
+    font-family: 'Nunito Sans';font-size: 18px;
+  }
+
+  .table thead th  {
+    color:rgb(113, 22, 22);
+    font-family: 'Nunito Sans';font-size: 18px;
+  }
+
+
+ 
+
+  .titletwo  {
+    color:#fff;
+    font-family: 'Nunito Sans';font-size: 23px;
+  }
+
+  .titlethree  {
+    color:white;
+    font-family: 'Nunito Sans';font-size: 13px;
+  }
+  .titlethree a{
+    color:#1FC7D4;
+    font-family: 'Nunito Sans';font-size: 13px;
+  }
+
+  
+  .subtitle {
+    color:white;
+    font-family: 'Nunito Sans';font-size: 18px;
+  }
