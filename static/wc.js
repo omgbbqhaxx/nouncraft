@@ -139,7 +139,7 @@ async function fetchAccountData() {
     clone.querySelector(".address").textContent = address;
     clone.querySelector(".balance").textContent = humanFriendlyBalance;
 
-    accountContainer.appendChild(clone);
+    //accountContainer.appendChild(clone);
 
    // -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
    var icon = blockies.create({ // All options are optional
