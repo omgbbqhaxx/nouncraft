@@ -25,21 +25,23 @@ html {
 
   .mycard {
     background-color: #1a1b20;
-    width: 302px;
-    height: 260px;
+    width: 100%; /* Use a percentage or other relative unit */
+    max-width: 302px; /* Optional: Set a maximum width */
+    height: auto; /* To maintain aspect ratio */
     border: 1px solid #6966FB; /* Border color */
     border-radius: 15px; /* Border radius for rounded corners */
     box-shadow: 0 0 4px #6966FB;
-  }
+}
 
-  .card-deck {
-    white-space: nowrap;
-  }
+.card-deck {
+    white-space: normal; /* Allow cards to wrap onto the next line */
+}
 
-  .card {
-      display: inline-block; /* Ensure the cards stay on the same line */
-      margin-right: 15px; /* Adjust the margin as needed for spacing between cards */
-  }
+.card {
+    display: inline-block;
+    margin-right: 15px; /* Adjust the margin as needed for spacing between cards */
+    margin-bottom: 15px; /* Optional: Add margin between stacked cards */
+}
 
   .badge-h6 {
     font-size: 1rem; /* Adjust the font size as needed */
