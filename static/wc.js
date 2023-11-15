@@ -206,6 +206,8 @@ async function generateMemo() {
     //var number = new BN(greatwei);
     console.log("selectedAccount", selectedAccount);
 
+    if(selectedAccount) {
+
     var greatwei = web3.utils.toWei('0.0001', 'ether');
 
     console.log("greatwei", greatwei);
@@ -285,6 +287,9 @@ async function generateMemo() {
     }).catch(function(err){
       console.log(err)
     });
+
+
+  } else { alert("please connect first")}
   
 }
 
