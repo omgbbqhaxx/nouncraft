@@ -157,7 +157,7 @@ async function fetchAccountData() {
 
   await Promise.all(rowResolvers);
   document.querySelector("#prepare").style.display = "none";
-  document.querySelector("#btn-disconnect").style.display = "none";
+  document.querySelector("#btn-disconnect").style.display = "block";
   document.querySelector("#connected").style.display = "block";
  
 }
