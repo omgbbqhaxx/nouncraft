@@ -94,15 +94,31 @@
 
 
         <div class="container mt-4"> 
-        <!-- Use it like any other HTML element -->
-        <model-viewer  src="static/3dcollection.glb"  shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer> 
 
-        <p class="titletwo">Noun stick.</p>
-        <div id="connected" style="display: none">
-          <button onclick="generateMemo()" class="button is-light" id="playwithmmask">Buy</button>
-          <button role="link" onclick="window.location.href='https://drive.google.com/file/d/12ENywXLU-bMpwI2WIZ7Ii2MrjUX15DPv/view?usp=drive_link'"    style="display: none" class="btnx" data="Download" id="startdownload"></button>
-        </div>
+           <!-- Card Listing -->
+        <div class="card-deck">
+          <!-- Item 1 -->
+          <div class="card">
+              <model-viewer src="static/3dcollection.glb" shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+              <div class="card-body">
+                  <h5 class="card-title titletwo">Noun Stick</h5>
+                  <div id="connected" style="display: none">
+                      <button onclick="generateMemo()" class="btnx" id="playwithmmask" data="Buy"></button>
+                      <button role="link" onclick="window.location.href='https://drive.google.com/file/d/12ENywXLU-bMpwI2WIZ7Ii2MrjUX15DPv/view?usp=drive_link'"    style="display: none" class="btnx" data="Download" id="startdownload"></button>
+                  </div>
+              </div>
+          </div>
+          <!-- Add more items as needed -->
       </div>
+
+
+
+     
+        
+          
+          
+        </div>
+       
 
 
         
