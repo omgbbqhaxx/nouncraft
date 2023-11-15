@@ -28,7 +28,7 @@ html {
     width: 302px;
     height: 260px;
     border: 1px solid #6966FB; /* Border color */
-    border-radius: 45px; /* Border radius for rounded corners */
+    border-radius: 15px; /* Border radius for rounded corners */
     box-shadow: 0 0 4px #6966FB;
   }
 
