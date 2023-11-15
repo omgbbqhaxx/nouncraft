@@ -25,23 +25,32 @@ html {
 
   .mycard {
     background-color: #1a1b20;
-    width: 100%; /* Use a percentage or other relative unit */
-    max-width: 302px; /* Optional: Set a maximum width */
-    height: auto; /* To maintain aspect ratio */
-    border: 1px solid #6966FB; /* Border color */
-    border-radius: 15px; /* Border radius for rounded corners */
+    width: 100%;
+    max-width: 302px;
+    height: auto;
+    border: 1px solid #6966FB;
+    border-radius: 15px;
     box-shadow: 0 0 4px #6966FB;
 }
 
 .card-deck {
-    white-space: normal; /* Allow cards to wrap onto the next line */
+    white-space: normal;
+    text-align: center; /* Center the cards within the container */
 }
 
 .card {
     display: inline-block;
-    margin-right: 15px; /* Adjust the margin as needed for spacing between cards */
-    margin-bottom: 15px; /* Optional: Add margin between stacked cards */
+    margin-right: 15px;
+    margin-bottom: 15px;
 }
+
+/* Center the last card when it's the only one on the line */
+.card-deck::after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+}
+
 
   .badge-h6 {
     font-size: 1rem; /* Adjust the font size as needed */
