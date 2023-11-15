@@ -105,22 +105,20 @@
           <button onclick="generateMemo()" class="button is-light" id="playwithmmask">Buy</button>
             <button role="link" onclick="window.location.href='https://drive.google.com/file/d/12ENywXLU-bMpwI2WIZ7Ii2MrjUX15DPv/view?usp=drive_link'"    style="display: none" class="button is-light" id="startdownload">Download</button>
           <hr>
-          <div id="network">
-            <p>
-              <strong>Connected blockchain:</strong> <span id="network-name"></span>
-            </p>
-            <p>
-              <strong>Selected account:</strong> <span id="selected-account"></span>
-            </p>
-          </div>
+          
           <hr>
           <table class="table  table-dark table-striped">
             <thead>
+              <th>Connected blockchain:</th>
+              <th>Selected account:</th>
               <th>Address</th>
               <th>ETH balance</th>
             </thead>
 
             <tbody id="accounts">
+              <th>   <span id="network-name"></span>  </th>
+              <th>   <span id="selected-account"></span> </th>
+
             </tbody>
           </table>
 
