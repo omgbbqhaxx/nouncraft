@@ -106,7 +106,7 @@ async function fetchAccountData() {
 
 
   // Purge UI elements any previously loaded accounts
-  accountContainer.innerHTML = '';
+  //accountContainer.innerHTML = '';
 
   // Go through all accounts and get their ETH balance
     const rowResolvers = accounts.map(async (address) => {
