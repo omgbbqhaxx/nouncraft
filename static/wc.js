@@ -157,6 +157,7 @@ async function fetchAccountData() {
 
   await Promise.all(rowResolvers);
   document.querySelector("#prepare").style.display = "none";
+  document.querySelector("#btn-disconnect").style.display = "none";
   document.querySelector("#connected").style.display = "block";
  
 }
@@ -166,8 +167,9 @@ async function fetchAccountData() {
 async function refreshAccountData() {
   document.querySelector("#connected").style.display = "none";
   document.querySelector("#prepare").style.display = "block";
-  document.querySelector("#btn-connect").setAttribute("disabled", "disabled");
   document.querySelector("#btn-disconnect").style.display = "block";
+  document.querySelector("#btn-connect").setAttribute("disabled", "disabled");
+  
   await fetchAccountData(provider);
   document.querySelector("#btn-connect").removeAttribute("disabled");
 }
