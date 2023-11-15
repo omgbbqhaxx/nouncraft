@@ -31,6 +31,15 @@ html {
     box-shadow: 0 0 10px #6966FB;
   }
 
+  .card-deck {
+    white-space: nowrap;
+  }
+
+  .card {
+      display: inline-block; /* Ensure the cards stay on the same line */
+      margin-right: 15px; /* Adjust the margin as needed for spacing between cards */
+  }
+
   .badge-h6 {
     font-size: 1rem; /* Adjust the font size as needed */
   }
