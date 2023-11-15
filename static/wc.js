@@ -346,7 +346,8 @@ async function onDisconnect() {
   // Set the UI back to the initial state
   document.querySelector("#prepare").style.display = "block";
   document.querySelector("#connected").style.display = "none";
-  document.querySelector("#btn-disconnect").style.display = "block";
+  document.querySelector("#btn-disconnect").style.display = "none";
+  document.querySelector(".blockimage").style.display = "none";
 }
 
 
