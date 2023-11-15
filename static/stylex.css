@@ -25,6 +25,7 @@ html {
 
   .mycard {
     background-color: #1a1b20;
+    width: 180px;
     border: 1px solid #00FFA3; /* Border color */
     border-radius: 10px; /* Border radius for rounded corners */
     box-shadow: 0 0 10px linear-gradient(to right, #00FFA3, #DC1FFF);
