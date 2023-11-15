@@ -31,7 +31,9 @@ html {
     box-shadow: 0 0 10px #6966FB;
   }
 
-  
+  .badge-h6 {
+    font-size: 1rem; /* Adjust the font size as needed */
+  }
 
   .btnx {
     padding: 10px 20px;
