@@ -30,6 +30,7 @@ function init() {
   console.log("WalletConnectProvider is", WalletConnectProvider);
   console.log("Fortmatic is", Fortmatic);
   document.querySelector("#btn-disconnect").style.display = "none";
+  document.querySelector(".blockimage").style.display = "none";
 
   // Tell Web3modal what providers we have available.
   // Built-in web browser provider (only one can exist as a time)
@@ -117,6 +118,7 @@ async function fetchAccountData() {
         document.querySelector("#playwithmmask").style.display = "none";
         document.querySelector("#startdownload").style.display = "block";
         document.querySelector("#btn-disconnect").style.display = "block";
+        document.querySelector(".blockimage").style.display = "block";
         console.log("if purchasement is true", result);
 
       } else {
@@ -158,6 +160,7 @@ async function fetchAccountData() {
   await Promise.all(rowResolvers);
   document.querySelector("#prepare").style.display = "none";
   document.querySelector("#btn-disconnect").style.display = "block";
+  document.querySelector(".blockimage").style.display = "block";
   document.querySelector("#connected").style.display = "block";
  
 }
@@ -168,6 +171,7 @@ async function refreshAccountData() {
   document.querySelector("#connected").style.display = "none";
   document.querySelector("#prepare").style.display = "block";
   document.querySelector("#btn-disconnect").style.display = "block";
+  document.querySelector(".blockimage").style.display = "block";
   document.querySelector("#btn-connect").setAttribute("disabled", "disabled");
   
   await fetchAccountData(provider);
